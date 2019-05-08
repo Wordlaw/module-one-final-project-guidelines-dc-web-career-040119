@@ -57,3 +57,8 @@ Projects need to be approved prior to launching into them, so take some time to 
 # in config/environment.rb add this line:
 ActiveRecord::Base.logger = nil
 ```
+
+
+, "anita", "jc", "bruno", "paul"
+  ,"mike" "sati", "gabby", "loosi", "zarwan", "samra", "amber", "nicole"
+  , "raheel", "justin", "beyonce", "jayz", "nas", "emel", "leah"
