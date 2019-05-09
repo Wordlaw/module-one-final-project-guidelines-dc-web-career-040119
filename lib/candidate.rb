@@ -4,7 +4,7 @@ class Candidate < ActiveRecord::Base
 
 
 
-  def self.select_requirements(company_choice_index, job_choice_index)
+  def self.select_array_on_experience(company_choice_index, job_choice_index)
     candidate_experience = Employer.all[company_choice_index].jobs[job_choice_index][:experience_requirement]
     eligible_candidate_arr = self.all.select do |candidate|
       if candidate_experience <= candidate[:candidate_experience]
@@ -24,7 +24,6 @@ class Candidate < ActiveRecord::Base
   end
 
   def self.select_candidate(eligible_candidate_arr, company_choice_index, job_choice_index)
-    job_salary = Employer.all[company_choice_index].jobs[job_choice_index][:salary]
     candidate_list_size = eligible_candidate_arr.size
     input = 0
     while input < 1 || input > candidate_list_size
@@ -34,6 +33,11 @@ class Candidate < ActiveRecord::Base
       end
     end
     candidate_choice_index = input - 1
+    candidate_choice_index
+  end
+
+    def self.display_choice(eligible_candidate_arr, candidate_choice_index, job_salary)
+
     puts " "
     puts "You chose, #{eligible_candidate_arr[candidate_choice_index][:name]}"
     if eligible_candidate_arr[candidate_choice_index][:salary_expectations] < job_salary
