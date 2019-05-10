@@ -1,4 +1,7 @@
+
+
 class Recruiter
+
 
   def self.header
     puts <<-'EOF'
@@ -41,5 +44,7 @@ class Recruiter
         return
       end
     end
+
+
 
 end
